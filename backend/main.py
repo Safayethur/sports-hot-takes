@@ -1,5 +1,6 @@
 
 from time import sleep
+from typing import Optional
 from fastapi import FastAPI, HTTPException, status
 from fastapi.staticfiles import StaticFiles
 import psycopg2
@@ -46,8 +47,13 @@ def makeTable():
     return {'Message: Table Created'}
 
 @app.get('/hottake', status_code=status.HTTP_200_OK)
-def getHotTakes(limit: int = 10, offset: int = 0, category: str = 'all'):
-    kursor.execute(""" SELECT * FROM HotTakes;""")
+def getHotTakes(limit: int = 10, offset: int = 0, category: Optional[str] = None):
+    if category:
+        query = """ SELECT * FROM HotTakes WHERE category = %s ORDER BY id DESC LIMIT %s OFFSET %s;"""
+        kursor.execute(query, (category, limit, offset))
+    else:
+        query = """ SELECT * FROM HotTakes ORDER BY id DESC LIMIT %s OFFSET %s;"""
+        kursor.execute(query, (limit, offset))
     return kursor.fetchall()
 
 
