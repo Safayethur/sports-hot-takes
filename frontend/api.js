@@ -3,7 +3,7 @@ const API_URL = "http://127.0.0.1:8000/hottake";
 
 // Load Data from supabase
 async function loadTakes(query = "") {
-    const url = query ? `${API_URL}?${query}` : API_URL;
+    const url = query ? `${API_URL}?category=${query}` : API_URL;
     const res = await fetch(url);
     const data = await res.json();
     return data;
