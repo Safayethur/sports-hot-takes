@@ -1,19 +1,34 @@
 /* Large */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-    background-color: #111827;
+    background-color: #18181b;
     color: aliceblue;
-    padding: 10px 10px;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 40px;
+}
 
-    font-family: Nunito, sans-serif;
+/* Main Layout */
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 header {
+    margin-bottom: 40px;
+    padding: 10px;
+    gap: 40px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
 }
+
 
 main {
     display: grid;
@@ -21,69 +36,126 @@ main {
     gap: 48px;
 }
 
-button {
-    color: inherit;
+
+
+/* Header */
+
+.main-header {
+    display: flex;
+    gap: 6px;
+    align-items: center;
 }
 
-.btn {
-    border: none;
-    font-size: 17px;
-    background-color: salmon;
-    border-radius: 50px;
+.logo {
+    width: 120px;
+    height: 120px;
+    padding: 10px;
+}
+
+h1 {
+    font-family: 'Anton', san-serif;
+    font-size: 42px;
+    text-transform: uppercase;
+ 
+}
+
+/* Takes */
+.hot-take {
+    background-color: #3f3f46;
+    padding: 18px 32px;
+    border: 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.hot-take:hover {
+    background-color: #52525b;
+    border-radius: 10px;
+
+    transition: 0.4s;
+
+}
+
+.hot-take-content {
+    display: flex;
+
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.tag {
+    background-color: red;
+    padding: 5px 10px;
+    border: 10px;
+    border-radius: 40px;
+
+    font-weight: 900;
 }
 
 ul {
     list-style: none;
 }
 
-/* Header */
+/* All Buttons */
+.btn {
+    border: none;
+    background-color: salmon;
+    color: inherit;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 700;
+    word-spacing: 6px;
+    letter-spacing: 1px;
 
-.main-header {
-    display: flex;
-    align-items: center;
+    padding: 16px 0px 13px;
+    line-height: 1;
+    border-radius: 100px;
+    cursor: pointer;
 }
 
-.logo {
-    width: 140px;
-    height: 100px;
-    padding: 10px;
+
+.btn:hover {
+    transform: scale(120%);
+    transition: 0.3s;
 }
 
-.share-take {
-    background-color: blue;
-    border-style: none;
-    border-radius: 50px;
-    padding: 20px;
+.btn:active {
+    transform: scale(110%);
+    transition: 0.3s;
 }
 
-/* Content */
+.btn-large {
+    font-size: 20px;
+    letter-spacing: 0px;
+    padding: 20px 28px 17px;
+    margin-left: 10px;
 
-.hot-take {
-    background-color: #1f2937;
-    padding: 30px;
-    border: 60px;
-    border-radius: 20px;
-    margin-bottom: 10px;
-
-    display: grid;
-}
-
-.tag {
-    background-color: red;
-    padding: 5px 10px;
-    border-radius: 40px;
+    background-image: linear-gradient(
+        130deg,
+        blue,
+        red
+    );
 }
 
 .btn-all-categories {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     width: 100%;
+    background-image: linear-gradient(
+        130deg,
+        blue,
+        red
+    );
 }
 
 .btn-category {
     background-image: none;
     border-style: none;
     width: 100%;
-    margin: 16px 0px;
+    margin: 8px 0px;
 }
 
 
