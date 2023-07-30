@@ -1,16 +1,11 @@
 import datetime
 from pydantic import BaseModel
 
-
-#Post
-
-
-
 class HotTake(BaseModel):
-    name: str 
-    hot_take: str
+    username: str
     category: str
+    hot_take: str
 
-class HotTakeRes(HotTake):
+class HotTakeResp(HotTake):
     id: int
     created: datetime.datetime
