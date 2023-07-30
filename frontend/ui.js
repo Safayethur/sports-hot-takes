@@ -40,36 +40,42 @@ createHotTakesList(data)
 
 // All
 allCategoriesBtn.addEventListener("click", async function () {
+    hotTakesList.innerHTML = "";
     const allCategoriesData = await loadTakes()
     createHotTakesList(allCategoriesData)
 })
 
 // Basketball
 basketballBtn.addEventListener("click", async function () {
+    hotTakesList.innerHTML = "";
     const basketballData = await loadTakes("basketball")
     createHotTakesList(basketballData)
 })
 
 // Combat
 combatBtn.addEventListener("click", async function () {
+    hotTakesList.innerHTML = "";
     const combatData = await loadTakes("combat")
     createHotTakesList(combatData)
 })
 
 // Football
 footballBtn.addEventListener("click", async function () {
+    hotTakesList.innerHTML = "";
     const footballData = await loadTakes("football")
     createHotTakesList(footballData)
 })
 
 // Soccer
 soccerBtn.addEventListener("click", async function () {
+    hotTakesList.innerHTML = "";
     const soccerData = await loadTakes("soccer")
     createHotTakesList(soccerData)
 })
 
 // Baseball
 baseballBtn.addEventListener("click", async function () {
+    hotTakesList.innerHTML = "";
     const baseballData = await loadTakes("baseball")
     createHotTakesList(baseballData)
 })
