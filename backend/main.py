@@ -63,3 +63,11 @@ def createHotTake(payload: schemas.HotTake):
     konnect.commit()
     hot_take = kursor.fetchone()
     return hot_take
+
+@app.get('/hottake/{id}', status_code=status.HTTP_200_OK)
+def getOneHotTake(id: int):
+    kursor.execute("""SELECT * FROM HotTakes WHERE id = %s""", (str(id),))
+    hot_take = kursor.fetchone()
+    if not hot_take:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f'Hot Take with ID: {id} not found.')
+    return hot_take
